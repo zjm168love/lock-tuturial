@@ -13,13 +13,13 @@ public class LockTest  implements Runnable {
 
     public static void main(String[] args) throws InterruptedException {
         SpinLock lock = new SpinLock();
-        for (int i = 0; i < 100; i++) {
+        for (int i = 0; i < 1000; i++) {
             LockTest test = new LockTest(lock);
             Thread t = new Thread(test);
             t.start();
         }
 
-        Thread.currentThread().sleep(1000);
+        Thread.sleep(1000);
         System.out.println(sum);
     }
 
